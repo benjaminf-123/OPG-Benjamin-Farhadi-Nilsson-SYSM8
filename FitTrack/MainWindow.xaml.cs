@@ -20,5 +20,15 @@ namespace FitTrack
         {
             InitializeComponent();
         }
+
+        private void SignIn_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Register_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
