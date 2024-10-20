@@ -23,12 +23,24 @@ namespace FitTrack
 
         private void SignIn_click(object sender, RoutedEventArgs e)
         {
+            string username = usrnameinput.Text;
+            string password = Pwdinput.Password;
 
+            if (username == "..." && password == "...")
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. ", "Login failed");
+            }
+
+            
         }
 
         private void Register_click(object sender, RoutedEventArgs e)
         {
-
+           
         }
     }
 }
