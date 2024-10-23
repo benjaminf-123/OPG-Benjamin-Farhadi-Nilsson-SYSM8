@@ -28,19 +28,6 @@ namespace FitTrack
             WorkoutList = new List<Workout>();
         }
 
-        // Lägga till träningspass
-        private void AddWorkout_Click(object sender, RoutedEventArgs e)
-        {
-            var addWorkoutWindow = new AddWorkoutWindow();
-
-            // Öppna fönstret och lägg till träningspasset
-            if (addWorkoutWindow.ShowDialog() == true)
-            {
-                Workout newWorkout = addWorkoutWindow.NewWorkout;
-                WorkoutList.Add(newWorkout);
-                RefreshWorkoutList();
-            }
-        }
 
         // Uppdatera listan med träningspass
         private void RefreshWorkoutList()
@@ -68,8 +55,24 @@ namespace FitTrack
             {
 
                 var detailsWindow = new UserDetailsWindow(selectedWorkout);
-                userDetailsWindow.ShowDialog();
+                detailsWindow.ShowDialog();
+            }
+        }   
+
+        //Lägga till passs
+        private void Addbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var addWorkoutWindow = new AddWorkoutWindow();
+
+            // Öppna fönstret och lägg till träningspasset
+            if (addWorkoutWindow.ShowDialog() == true)
+            {
+                Workout newWorkout = addWorkoutWindow.NewWorkout;
+                WorkoutList.Add(newWorkout);
+                RefreshWorkoutList();
             }
         }
+
+
     }
 }

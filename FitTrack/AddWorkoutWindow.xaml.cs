@@ -19,6 +19,7 @@ namespace FitTrack
     /// </summary>
     public partial class AddWorkoutWindow : Window
     {
+        public Workout NewWorkout { get; private set; }
         public AddWorkoutWindow()
         {
             InitializeComponent();
@@ -26,12 +27,40 @@ namespace FitTrack
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // Kontrollera användarinmatning och skapa ett nytt träningspass
+            if (WorkoutTypeComboBox.SelectedItem != null && !string.IsNullOrEmpty(WorkoutDetailsInput.Text))
+            {
+                if (WorkoutTypeComboBox.SelectedItem.ToString() == "Cardio")
+                {
+                    NewWorkout = new CardioWorkout
+                    {
+                        Distance = int.Parse(WorkoutDetailsInput.Text)
+                    };
+                }
+                else
+                {
+                    NewWorkout = new StrengthWorkout
+                    {
+                        Repetitions = int.Parse(WorkoutDetailsInput.Text)
+                    };
+                }
+                this.DialogResult = true; 
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid workout details.");
+            }
         }
+
+
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
+            this.Close();
 
         }
     }
 }
+

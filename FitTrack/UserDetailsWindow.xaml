@@ -7,19 +7,45 @@
         mc:Ignorable="d"
         Title="UserDetailsWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Edit User Details" FontSize="20" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"/>
         
-        <Label Content="Current Username" HorizontalAlignment="Left" Margin="20,70,20,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="NewUsernameInput" HorizontalAlignment="Right" Margin="0,110,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        
+        <!-- Titel -->
+        <Label Content="Edit User Details" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+        <!-- Nuvarande användarnamn -->
+        <Label Content="Current Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,70,0,0"/>
+        <TextBox x:Name="CurrentUsername" IsEnabled="False" HorizontalAlignment="Right" Margin="0,70,20,0" Width="150"/>
+
+        <!-- Nytt användarnamn -->
         <Label Content="New Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,110,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="64,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NewUsrnameInput" HorizontalAlignment="Right" Margin="0,110,20,0" Width="150"/>
 
+        <!-- Nytt lösenord -->
+        <Label Content="New Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,150,0,0"/>
+        <PasswordBox x:Name="NewPwdInput" HorizontalAlignment="Right" Margin="0,150,20,0" Width="150"/>
 
+        <!-- Bekräfta nytt lösenord -->
+        <Label Content="Confirm Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,190,0,0"/>
+        <PasswordBox x:Name="ConfirmPwdInput" HorizontalAlignment="Right" Margin="0,190,20,0" Width="150"/>
 
+        <!-- Välj nytt land -->
+        <Label Content="Country:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,230,0,0"/>
+        <ComboBox x:Name="CountryComboBox" HorizontalAlignment="Right" Margin="0,230,20,0" Width="150">
+            <ComboBoxItem Content="Sweden"/>
+            <ComboBoxItem Content="Norway"/>
+            <ComboBoxItem Content="Denmark"/>
+            <ComboBoxItem Content="United States"/>
+        </ComboBox>
 
+        <!-- Felmeddelanden -->
+        <TextBlock x:Name="ErrorMessage" Foreground="Red" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top"/>
+        
+         <!-- Spara-knapp -->
+        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="50,0,0,20" VerticalAlignment="Bottom"  Width="100" Click="SaveBtn_Click"/>
+        
+        <!-- Avbryt-knapp -->
+        <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,50,20" VerticalAlignment="Bottom" Width="100" Click="CancelBtn_Click"/>
 
 
 
     </Grid>
-</Window>
+        </Window>
