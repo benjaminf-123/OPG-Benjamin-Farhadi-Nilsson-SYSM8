@@ -38,9 +38,19 @@ namespace FitTrack
             
         }
 
-        private void Register_click(object sender, RoutedEventArgs e)
+        
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
-           
+            {
+
+                var registerWindow = new RegisterWindow();
+                registerWindow.Show();
+
+                this.Close();
+            }
+
         }
+
     }
-}
+    }

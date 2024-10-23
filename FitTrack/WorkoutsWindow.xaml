@@ -7,18 +7,19 @@
         mc:Ignorable="d"
         Title="WorkoutsWindow" Height="450" Width="800">
     <Grid>
+       
         <!-- Titel -->
-        <Label Content="Your Workouts" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+        <Label Content="Your Workouts" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="108,20,0,0" Grid.Column="1"/>
 
         <!-- Lista för att visa träningspass -->
-        <ListBox x:Name="WorkoutsList" HorizontalAlignment="Left" Height="200" Margin="20,70,0,0" VerticalAlignment="Top" Width="350"/>
-        
+        <ListBox x:Name="WorkoutsList" HorizontalAlignment="Left" Height="200" Margin="20,70,0,0" VerticalAlignment="Top" Width="350" Grid.ColumnSpan="2"/>
+
         <!-- Knappar för att hantera träningspass -->
-        <Button Content="Add Workout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="400,70,0,0" Click="AddWorkout_Click"/>
-        <Button Content="Remove Workout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="400,120,0,0"/>
-        <Button Content="Details" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="400,170,0,0"/>
+        <Button Content="Add Workout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="191,70,0,0" Click="AddWorkout_Click" Grid.Column="1"/>
+        <Button Content="Remove Workout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="191,120,0,0" Grid.Column="1"/>
+        <Button Content="Details" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="191,170,0,0" Grid.Column="1"/>
 
         <!-- Utloggningsknapp -->
-        <Button Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,20,20"/>
+        <Button Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,20,20" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -8,5 +8,32 @@
         Title="RegisterWindow" Height="450" Width="800">
     <Grid>
         
+        
+        <Label Content="Register New User" FontSize="20" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top"/>
+        
+        
+        <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Margin="351,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+       
+        
+        <PasswordBox x:Name="PwdInput" HorizontalAlignment="Left" Margin="50,120,50,0" VerticalAlignment="Top" Width="120" Height="25" PasswordChanged="PwdInput_PasswordChanged"/>
+        <PasswordBox x:Name="ConfirmPwd" HorizontalAlignment="Left" Margin="50,160,50,0" VerticalAlignment="Top" Width="120" Height="25" PasswordChanged="ConfirmPwd_PasswordChanged"/>
+
+
+        <ComboBox  x:Name="CountryComboBox" HorizontalAlignment="Left" Margin="50,200,50,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Sweden"/>
+            <ComboBoxItem Content="Norway"/>
+            <ComboBoxItem Content="Denmark"/>
+            </ComboBox>
+
+
+
+        <TextBlock x:Name="ErrorMessage" HorizontalAlignment="Center" Margin="0,250,0,0" Foreground="Red" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        
+        <Button x:Name="RegisterBtn" Content="Register" HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top" Width="100" Click="RegisterBtn_Click"/>
+        <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" Margin="0,340,50,0" VerticalAlignment="Top" Width="100" Click="CancelBtn_Click"/>
+
+
+
     </Grid>
 </Window>
+    

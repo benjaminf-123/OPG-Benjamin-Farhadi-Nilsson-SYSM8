@@ -45,8 +45,8 @@ namespace FitTrack
         // Uppdatera listan med träningspass
         private void RefreshWorkoutList()
         {
-            WorkoutsList.ItemsSource = null; 
-            WorkoutsList.ItemsSource = WorkoutList; 
+            WorkoutsList.ItemsSource = null;
+            WorkoutsList.ItemsSource = WorkoutList;
         }
 
         // Ta bort träningspass
@@ -66,9 +66,9 @@ namespace FitTrack
             var selectedWorkout = (Workout)WorkoutsList.SelectedItem;
             if (selectedWorkout != null)
             {
-                
-                var detailsWindow = new WorkoutDetailsWindow(selectedWorkout);
-                detailsWindow.ShowDialog();
+
+                var detailsWindow = new UserDetailsWindow(selectedWorkout);
+                userDetailsWindow.ShowDialog();
             }
         }
     }

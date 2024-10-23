@@ -23,5 +23,71 @@ namespace FitTrack
         {
             InitializeComponent();
         }
+
+
+       
+        
+        
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PwdInput.Password != ConfirmPwd.Password)
+            {
+                ErrorMessage.Text = "Passwords do not match";
+                return;
+            }
+            if (PwdInput.Password.Length < 8 ||
+               !PwdInput.Password.Any(char.IsDigit) ||
+               !PwdInput.Password.Any(char.IsPunctuation))
+            {
+                ErrorMessage.Text = "Password must be at least 8 characters long, with at least one number and one special character.";
+                return;
+            }
+            if (IsUsernameTaken(UsernameInput.Text))
+            {
+                ErrorMessage.Text = "Username is already taken.";
+                return;
+            }
+
+
+            var newUser = new User
+            {
+                Username = UsernameInput.Text,
+                Password = PwdInput.Password,
+                Country = CountryComboBox.Text
+            };
+
+
+            MessageBox.Show("User registered successfully!");
+
+
+            this.Close();
+
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
+        private bool IsUsernameTaken(string username)
+        {
+            if (username == "admin")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void PwdInput_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConfirmPwd_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
+
