@@ -53,11 +53,14 @@ namespace FitTrack
             var selectedWorkout = (Workout)WorkoutsList.SelectedItem;
             if (selectedWorkout != null)
             {
-
-                var detailsWindow = new UserDetailsWindow(selectedWorkout);
+                var detailsWindow = new WorkoutDetailsWindow(selectedWorkout);
                 detailsWindow.ShowDialog();
             }
-        }   
+            else
+            {
+                MessageBox.Show("Please select a workout first.");
+            }
+        }
 
         //Lägga till passs
         private void Addbtn_Click(object sender, RoutedEventArgs e)
@@ -73,6 +76,13 @@ namespace FitTrack
             }
         }
 
-
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+        }
     }
 }

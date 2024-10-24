@@ -11,20 +11,26 @@
 
         <!-- Datum -->
         <Label Content="Date:" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="WorkoutDateInput" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,60,20,0" Width="150"/>
+        <TextBox x:Name="WorkoutDateInput" IsEnabled="False" HorizontalAlignment="Right" Margin="0,60,20,0" Width="150"/>
 
         <!-- Typ av träningspass -->
         <Label Content="Workout Type:" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="WorkoutTypeInput" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,100,20,0" Width="150"/>
+        <TextBox x:Name="WorkoutTypeInput" IsEnabled="False" HorizontalAlignment="Right" Margin="0,100,20,0" Width="150"/>
 
-        <!-- Specifik detalj beroende på typ (Cardio/Strength) -->
+        <!-- Specifik detalj beroende på Cardio/Strength -->
         <Label Content="Details:" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="WorkoutDetailsInput" HorizontalAlignment="Right" Margin="0,140,20,0" Width="150"/>
 
         <!-- Brända kalorier -->
         <Label Content="Calories Burned:" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="CaloriesBurnedInput" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,180,20,0" Width="150"/>
+       
+         <!-- Spara och Avbryt knappar -->
+        <Button x:Name="Savebtn" Content="Save" HorizontalAlignment="Left" Margin="80,240,0,0" VerticalAlignment="Top" Width="100" Click="Savebtn_Click"/>
+        <Button x:Name="CancelBtn" Content="Cancel" HorizontalAlignment="Right" Margin="0,240,80,0" VerticalAlignment="Top" Width="100" Click="CancelBtn_Click" />
 
-        
+
+
+
     </Grid>
 </Window>

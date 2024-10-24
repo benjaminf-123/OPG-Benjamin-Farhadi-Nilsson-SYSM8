@@ -30,11 +30,15 @@ namespace FitTrack
         
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
+            
+            // Kontrollera om lösenorden matchar
             if (PwdInput.Password != ConfirmPwd.Password)
             {
                 ErrorMessage.Text = "Passwords do not match";
                 return;
             }
+            
+            // Kontrollera ifall lösenordet har minst 8 tecken, en siffra och ett specialtecken
             if (PwdInput.Password.Length < 8 ||
                !PwdInput.Password.Any(char.IsDigit) ||
                !PwdInput.Password.Any(char.IsPunctuation))
@@ -42,13 +46,15 @@ namespace FitTrack
                 ErrorMessage.Text = "Password must be at least 8 characters long, with at least one number and one special character.";
                 return;
             }
+            
+            // Kontrollera om användarnamnet redan är upptaget
             if (IsUsernameTaken(UsernameInput.Text))
             {
                 ErrorMessage.Text = "Username is already taken.";
                 return;
             }
 
-
+            // Skapa en ny användare och ge användaren ett användarnamn, lösenord och land
             var newUser = new User
             {
                 Username = UsernameInput.Text,
@@ -69,6 +75,8 @@ namespace FitTrack
             this.Close();
 
         }
+        
+        // Kontrollera ifall användarnamnet redan är upptaget
         private bool IsUsernameTaken(string username)
         {
             if (username == "admin")

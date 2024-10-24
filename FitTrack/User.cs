@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitTrack
 {
+    // User klassen ärver från Person-klassen
     public class User : Person
     {
         public string Country { get; set; }

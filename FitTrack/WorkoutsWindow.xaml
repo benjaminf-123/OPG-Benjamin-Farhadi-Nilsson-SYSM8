@@ -20,6 +20,6 @@
         <Button x:Name="DetailsBtn" Content="Details" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="191,170,0,0"/>
 
         <!-- Utloggningsknapp -->
-        <Button Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,20,20" Grid.Column="1"/>
+        <Button x:Name="LogOutBtn" Content="Logout" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,20,20" Click="LogOutBtn_Click" />
     </Grid>
 </Window>

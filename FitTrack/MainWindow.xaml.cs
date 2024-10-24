@@ -23,15 +23,27 @@ namespace FitTrack
 
         private void SignIn_click(object sender, RoutedEventArgs e)
         {
+            
+            // Hämtar användarnamn och lösenord från inmatningsfälten
             string username = usrnameinput.Text;
             string password = Pwdinput.Password;
 
+            
+            // Kontrollerar om användarnamnet och lösenordet matchar
             if (username == "..." && password == "...")
             {
+                var workoutsWindow = new WorkoutsWindow();
+                
+                // Sätter inloggad användare i WorkoutsWindow
+                workoutsWindow.User = new User { Username = username }; 
+                workoutsWindow.Show();
                 this.Close();
+                
             }
             else
             {
+                
+                // Visar ett felmeddelande om inloggningsuppgifterna är felaktiga
                 MessageBox.Show("Invalid username or password. ", "Login failed");
             }
 
@@ -44,6 +56,7 @@ namespace FitTrack
         {
             {
 
+                // Skapar och öppnar RegisterWindow när användaren klickar på Register
                 var registerWindow = new RegisterWindow();
                 registerWindow.Show();
 

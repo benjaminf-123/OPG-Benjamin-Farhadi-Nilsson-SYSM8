@@ -40,22 +40,28 @@ namespace FitTrack
             string selectedCountry = CountryComboBox.Text;
 
 
+            // Kontroll av att det nya användarnamnet är tillräckligt långt (minst 3 tecken)
             if (newUsername.Length < 3)
             {
                 ErrorMessage.Text = "Username must be at least 3 characters.";
                 return;
             }
-
+            
+            // Kontroll av att användarnamnet inte är upptaget
             if (IsUsernameTaken(newUsername))
             {
                 ErrorMessage.Text = "Username is already taken.";
                 return;
             }
+
+            // Kontroll av att lösenorden matchar
             if (newPassword != ConfirmPassword)
             {
                 ErrorMessage.Text = "Passwords do not match.";
                 return;
             }
+           
+             // Kontroll av att lösenordet är minst 5 tecken långt
             if (newPassword.Length < 5)
             {
                 ErrorMessage.Text = "Password must be at least 5 characters.";
@@ -68,6 +74,8 @@ namespace FitTrack
             MessageBox.Show("User details updated successfully!");
             this.Close();
         }
+        
+        //kontrollera om användarnamnet redan är upptaget
         private bool IsUsernameTaken(string username)
         {
             return username == "admin";

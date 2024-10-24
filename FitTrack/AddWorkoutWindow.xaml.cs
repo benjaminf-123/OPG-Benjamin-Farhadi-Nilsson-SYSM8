@@ -27,24 +27,24 @@ namespace FitTrack
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Kontrollera användarinmatning och skapa ett nytt träningspass
             if (WorkoutTypeComboBox.SelectedItem != null && !string.IsNullOrEmpty(WorkoutDetailsInput.Text))
             {
-                if (WorkoutTypeComboBox.SelectedItem.ToString() == "Cardio")
+                ComboBoxItem selectedType = (ComboBoxItem)WorkoutTypeComboBox.SelectedItem;
+                if (selectedType.Content.ToString() == "Cardio")
                 {
                     NewWorkout = new CardioWorkout
                     {
                         Distance = int.Parse(WorkoutDetailsInput.Text)
                     };
                 }
-                else
+                else if (selectedType.Content.ToString() == "Strength")
                 {
                     NewWorkout = new StrengthWorkout
                     {
                         Repetitions = int.Parse(WorkoutDetailsInput.Text)
                     };
                 }
-                this.DialogResult = true; 
+                this.DialogResult = true;
                 this.Close();
             }
             else
